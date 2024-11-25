@@ -1,5 +1,6 @@
 typedef struct doubleLList DoubleLList;
 DoubleLList * createDoubleLList();
+DoubleLList * createDoubleLListFromArray(void * arr, unsigned long arr_type_size, int length);
 
 int getLength(DoubleLList * list);
 void *getNext(DoubleLList *list);

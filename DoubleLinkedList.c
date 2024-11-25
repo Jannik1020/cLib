@@ -17,6 +17,8 @@ typedef struct doubleLList
 
 } DoubleLList;
 
+int insertLast(DoubleLList *list, void * pData);
+
 DoubleLList *createDoubleLList()
 {
     DoubleLList *list = malloc(sizeof(DoubleLList));
@@ -29,6 +31,15 @@ DoubleLList *createDoubleLList()
         list->length = 0;
     }
 
+    return list;
+}
+
+DoubleLList * createDoubleLListFromArray(void * arr, unsigned long arr_type_size, int length) {
+    DoubleLList * list = createDoubleLList();
+
+    for (int i = 0; i < length; i++) {
+        insertLast(list, (arr+i*arr_type_size));
+    }
     return list;
 }
 
